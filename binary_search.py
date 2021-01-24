@@ -27,7 +27,10 @@ def find_smallest_positive(xs):
 	smallest_positive_num=None
 	
 	if bin_search_results[0]:
-		smallest_positive_num=bin_search_results[1]+1
+		if xs[bin_search_results[1]]==0:
+			smallest_positive_num=bin_search_results[1]+1
+		else:
+			smallest_positive_num=bin_search_results[1]
 	else:
 		if xs[0]>0:
 			return 0
