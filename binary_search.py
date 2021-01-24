@@ -40,7 +40,6 @@ def bin_search(a_list,target):
 	
 	start=0
 	end=len(a_list)-1
-	index=0
 	found=False
 
 	
@@ -58,9 +57,15 @@ def bin_search(a_list,target):
 				end=midpoint-1
 			else:
 				start=midpoint+1
-				index+=start
+				
+	
 	if found:
 		return [found,midpoint]
+	#this part returns true if the searched number is in between the adjacent numbers but is not there 
+	
+	if a_list[midpoint-1]<0 and a_list[midpoint]>0:		
+		return [True,midpoint]
+	
 	else:
 		return [found,False]
 	
@@ -72,13 +77,14 @@ def bin_search(a_list,target):
 #print(find_smallest_positive([-3, -2, -1]) is None)
 
 #print(bin_search([-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3],3))
-
 #print([-7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3].index(3))
-#print(bin_search([-3, -2, -1, 0, 1, 2, 3],-3))
+#print(bin_search([-3, -2, -1, 1, 2, 3],0))
+#print(bin_search([-3, -2, -1, 1, 2, 3],-3))
 #print([-3, -2, -1, 0, 1, 2, 3].index(-3))
 #print(bin_search([1, 2, 3],2))
 #print(bin_search([-3, -2, -1],2))
 
+#print(bin_search([-3, -2, -1],0))
 
 def count_repeats(xs, x):
 	'''
