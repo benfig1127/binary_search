@@ -191,7 +191,7 @@ def bin_search_low_index(xs,x):
 			next_highest_x_value=xs[next_highest_x_index]
 		
 		
-		return [found,next_highest_x_index+1]
+		return [found,next_highest_x_index]
 		
 	else:
 		
