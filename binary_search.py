@@ -182,7 +182,7 @@ def bin_search_low_index(xs,x):
 			#print('highest_x_index',highest_x_index)
 			if next_highest_x_index==boundary:
 				
-				return [found, next_highest_x_index]
+				return [found, next_highest_x_index+1]
 			
 			highest_x_index+=1
 			next_highest_x_index+=1
@@ -191,7 +191,7 @@ def bin_search_low_index(xs,x):
 			next_highest_x_value=xs[next_highest_x_index]
 		
 		
-		return [found,next_highest_x_index]
+		return [found,next_highest_x_index+1]
 		
 	else:
 		
