@@ -64,9 +64,9 @@ def bin_search(a_list,target):
 	
 	if found:
 		return [found,midpoint]
-	#this part returns true if the searched number is in between the adjacent numbers but is not there 
 	
-	if a_list[midpoint-1]<0 and a_list[midpoint]>0:		
+	#this part returns true if the searched number is in between the adjacent numbers but is not there
+	if a_list[midpoint-1]<target and a_list[midpoint]>target:		
 		return [True,midpoint]
 	
 	else:
@@ -89,16 +89,18 @@ def bin_search(a_list,target):
 
 #print(bin_search([-3, -2, -1],0))
 
+
+
+
 def count_repeats(xs, x):
 	'''
 	Assume that xs is a list of numbers sorted from HIGHEST to LOWEST,
 	and that x is a number.
 	Calculate the number of times that x occurs in xs.
-
 	HINT: 
 	Use the following three step procedure:
 		1) use binary search to find the lowest index with a value >= x
-		2) use binary search to find the lowest index with a value < x
+		2) use binary search to find the lowest *****(should be highest no??)***** index with a value < x
 		3) return the difference between step 1 and 2
 
 	I highly recommend creating stand-alone functions for steps 1 and 2
