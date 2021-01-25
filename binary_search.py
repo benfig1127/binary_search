@@ -163,14 +163,12 @@ def bin_search_low_index(xs,x):
 	found, initial_x_index = binary_search(xs,x,False)
 	
 	boundary=len(xs)-1
+	#print('boundary:',boundary)
+	#print('initial_x_index',initial_x_index)
+	
 	if found:
 		
 		if initial_x_index==boundary:
-			#if the found index was the beginning of the list, 
-			#we cannot find a higher value, thus we immiedielty 
-			#return the found key and the original index 
-			
-			#print("Already at end of list:")
 			return [found, initial_x_index+1]
 		
 		highest_x_index = initial_x_index
@@ -180,15 +178,12 @@ def bin_search_low_index(xs,x):
 		next_highest_x_value=xs[next_highest_x_index]
 		
 		while highest_x_value==next_highest_x_value:
-			#first check to see if we have reached the beggining of the list
 			
-			if highest_x_index==boundary:
+			#print('highest_x_index',highest_x_index)
+			if next_highest_x_index==boundary:
 				
-				#print("Reached the end of list while checking:")
-				return [found, highest_x_index]
+				return [found, next_highest_x_index]
 			
-			#if we are not at the beggining of the list then incriment out indicies
-			#and continue out loop 
 			highest_x_index+=1
 			next_highest_x_index+=1
 			
@@ -196,17 +191,13 @@ def bin_search_low_index(xs,x):
 			next_highest_x_value=xs[next_highest_x_index]
 		
 		
-		#'highest_x_index' now contains the highest index of 
-		#all of the potentially duplicate x values
-		#we return this index as our highest index
-		
-		#print("Did not reach the end of the list, returnning index:")
 		return [found,next_highest_x_index]
 		
 	else:
-		#print("Initial binary search failed, exiting:")
+		
 		return [found,0]
 
+#print(bin_search_low_index([1, 1, 1, 1, 1, 1, 1, 1, 1, 1],1))
 
 def count_repeats(xs, x):
 	
